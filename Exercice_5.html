@@ -3,14 +3,53 @@
     <head>
         <title>Exercice_5</title>
         <meta charset="UTF-8">
+        <script type="text/javascript">
+            function testVirgul(val) {
+                var test=val.indexOf(",")
+                if (test > 0) {//test si contient virgule
+                    val=val.replace(",", ".")
+                }
+                if (isNaN(val)) {//teste si saisie n'est pas un nombre
+                    val = "erreur"
+                }
+                    return val;
+            }
+            
+            function calc(val1, val2) {
+                var val1=testVirgul(val1);// appel fonction testVirgul
+                var val2=testVirgul(val2);
+                var result=""
+                if (val1=="" || val2=="") {// gestion champs vides
+                    result="impossible d'exécuter le calcul avec un ou plusieurs champs vides"
+                } else if (val1=="erreur" || val2=="erreur") {// gestion erreur(s)
+                    result="impossible d'exécuter le calcul : les 2 saisies doivent être des nombres"
+                } else {
+                    val1=Math.trunc(val1)// récupère l'entier
+                    result=val1*val2
+                    result="Le résultat de " + val1 + " X " + val2 + " : " + result
+                }
+                return result;
+            }
+
+            function maFonction() {
+                var premier_nombre = document.getElementById("premier_nombre").value; //recupère la 1ere valeur
+                var deuxieme_nombre=document.getElementById("deuxieme_nombre").value;//recupère la 2eme valeur
+                var result=calc(premier_nombre, deuxieme_nombre) // appel fonction calc
+                alert("Résultat : " + result)
+            }
+        </script>
     </head>
     <body>
         <form>
-            <label for="premier_nombre">Premier nombre : </label>
+            <label for="premier_nombre">Premier nombre (seul le nombre entier sera pris en compte pour le calcul): </label>
             <input type="text" id="premier_nombre" name="premier_nombre" value=""/>
             <label for="deuxieme_nombre">Deuxième nombre : </label>
             <input type="text" id="deuxieme_nombre" name="deuxieme_nombre" value=""/>
-            <button id="valider" name ="valider">Valider</button>
+            <button id="valider" name ="valider" onclick="maFonction()">Valider</button>
         </form>
     </body>
-</html>
+</html
+>
+<!-- * Afficher **un formulaire** permettant à l’utilisateur de saisir deux nombres à virgule.
+* Ne garder que **la partie entière** du premier .  
+* Les multiplier et afficher le résultat dans **une boîte de dialogue**. -->

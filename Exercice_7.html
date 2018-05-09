@@ -3,8 +3,39 @@
 <head>
     <title>Exercice_8</title>
     <meta charset="UTF-8">
+    <script type="text/javascript">        
+        function maFonction() {
+                var taille = document.getElementById("taille").value; //recupère la  saisie
+                var annee_naissance = document.getElementById("annee_naissance").value; //recupère la  saisie
+                var result="";
+                //vérif saisie conforme
+                if (isNaN(taille) || isNaN(annee_naissance) || annee_naissance<1900 || taille>50 || taille<20) {
+                    result="Erreur, vérifier les valeurs saisies (nombres uniquement et dans les critères précisés)"
+                } else {
+                    result=((((taille*2)+5)*50)-annee_naissance)+1766
+                }
+                alert("Résultat : " + result)
+            }
+        </script>
+    </script>
 </head>
 <body>
-
+    <form>
+        <label for="taille">Saisir votre pointure (compris entre 20 et 50) :</label>
+        <input type="text" id="taille" name="taille" value=""/>
+        <label for="annee_naissance">Votre année de naissance (>1900) : </label>
+        <input type="text" id="annee_naissance" name="annee_naissance" value=""/>
+        <button id="valider" name ="valider" onclick="maFonction()">Valider</button>
+    </form>
 </body>
 </html>
+<!-- * Afficher **un formulaire** permettant à l’utilisateur de saisir **sa pointure** et son **année de naissance**.
+* Créer une fonction qui fait les calculs suivants :anannee_naissancenee_naissance
+
+1. **Multiplier la pointure par 2**
+2. **Ajouter 5 au résultat**
+3. **Multiplier le tout par 50**
+4. **Soustraire l’année de naissance**
+5. **Ajouter au tout 1766**
+
+La fonction doit retourner le résultat. -->

@@ -3,16 +3,23 @@
 <head>
     <title>Exercice_3</title>
     <meta charset="UTF-8">
+    <script type="text/javascript">
+    	function maFonction() {
+    		var prenom = document.getElementById("prenom").value; 
+			alert("Bonjour, " + prenom);
+    	}
+    </script>
 </head>
 <body>
-<form>
+<form name="form">
     <label for="nom">Nom : </label>
     <input type="text" name="nom" id="nom" value=""/>
     <label for="prenom">Prénom : </label>
     <input type="text" name="prenom" id="prenom" value=""/>
     <label for="ville">Ville : </label>
     <input type="text" name="ville" id="ville"  value=""/>
-    <button  name="valider" id="valider">Valider</button>
+    <button  name="valider" id="valider" onclick="maFonction()">Valider</button>
 </form>
 </body>
 </html>
+<!-- * Afficher **un formulaire** permettant de **saisir** son prénom. Afficher dans **une boîte de dialogue** "Bonjour, " suivi du prénom saisi. -->

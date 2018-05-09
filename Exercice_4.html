@@ -3,8 +3,25 @@
     <head>
         <title>Exercice_4</title>
         <meta charset="UTF-8">
+	    <script type="text/javascript">
+	    	function maFonction() {
+	    		var prenom = document.getElementById("prenom").value; 
+	    		var nom=document.getElementById("nom").value; 
+	    		var ville=document.getElementById("ville").value;
+				alert(nom + "\n" + prenom + "\n" + ville)
+	    	}
+	    </script>
     </head>
     <body>
-
+    	<form name="form">
+		    <label for="nom">Nom : </label>
+		    <input type="text" name="nom" id="nom" value=""/>
+		    <label for="prenom">Prénom : </label>
+		    <input type="text" name="prenom" id="prenom" value=""/>
+		    <label for="ville">Ville : </label>
+		    <input type="text" name="ville" id="ville"  value=""/>
+		    <button  name="valider" id="valider" onclick="maFonction()">Valider</button>
+		</form>
     </body>
 </html>
+<!-- * Refaire **l’exercice 2** en demandant le **nom**, le **prénom** et la **ville** à l’utilisateur via **un formulaire**. -->

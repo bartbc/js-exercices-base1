@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Exercice_7</title>
+        <title>Exercice_6</title>
         <meta charset="UTF-8">
+        <script type="text/javascript">
+            function maFonction() {
+                var age_saisie = document.getElementById("age_saisie").value; //recupère la  saisie
+                var result="";
+                if (isNaN(age_saisie)) {//teste si saisie n'est pas un nombre
+                    result="La valeur saisie n'est pas un nombre entier";
+                } else if (age_saisie>=18) {
+                    result="Vous êtes majeur";
+                } else  {
+                    result="Vous êtes mineur";
+                }
+                alert("Résultat : " + result)
+            }
+        </script>
+
     </head>
     <body>
-
+        <form>
+            <label for="age_saisie">Saisir votre age (nombre entier) : </label>
+            <input type="text" id="age_saisie" name="age_saisie" value=""/>
+            <button id="valider" name ="valider" onclick="maFonction()">Valider</button>
+        </form>
     <body>
 </html>
+<!-- * Afficher **un formulaire** permettant à l’utilisateur de saisir son **âge** (pas age==> autre nom).
+* S’il a plus de **18 ans**, afficher **" Vous êtes majeur "**. Sinon afficher **" Vous êtes mineur "**. -->
